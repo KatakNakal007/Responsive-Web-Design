@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- penjelasan terkait apa yang ada di dalam element head sama dengan penjelasan sebelumnya yang terdapat di halaman login.html -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" /> -->
+    <title>Seribu Persen || Daftar Page</title>
+</head>
+
+<!-- class align-items-center yaitu membuat isi dari apa yang ada di dalam body menjadi ketengah -->
+
+<body class="align-items-center">
+    <!-- penjelasan terkait class-class pada div ini sama seperti yang ada di halaman login.html -->
+    <div class="container-fluid py-5 px-4 text-center" style="height: 694px;">
+        <div class="row h-100">
+            <div class="px-5 col-sm-12 col-md-12 col-lg-6 bg-warning">
+                <p class="text-start mt-2"><a href="index.html">Kembali ke Hompage</a></p>
+                <h1 class=" h3 mb-5 mt-3 fw-normal text-start">Daftar <br> Akun Seribu Persen</h1>
+                <!-- sama seperti di halaman login.html hanya saja link pada text Masuk, yuk! 
+                    yang akan mengarah ke halaman login.html ketika di klik -->
+                <p class="pb-4 text-start">Sudah punya akun? <a href="login.html">Masuk, yuk!</a></p>
+                <hr>
+                <!-- membuat form untuk  mengelola proses daftar (belum diterapkan prosesnya) -->
+                <!-- class row pada form untuk membagi kolom-kolom pada input-input yang ada di dalamnya agar tidak menurun kebawah dan dapat di sampingkan
+                ketika di tampilkan -->
+                <!-- class g-2 atau gutter yaitu memberikan jarak atau spasi antara input field satu dengan yang lainnya -->
+                <form class="row g-2">
+                    <!-- penjelasan terkain input tipe text, email, dan password sama seperti yang ada di halaman login.html -->
+                    <div class="form-floating mb-2 col-sm-6">
+                        <input type="text" class="form-control" id="floatingInput1" placeholder="Nama"
+                            style="border-radius: 10px;">
+                        <label for="floatingInput1">Nama</label>
+                    </div>
+                    <div class="form-floating mb-2 col-sm-6">
+                        <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com"
+                            style="border-radius: 10px;">
+                        <label for="floatingInput2">Email</label>
+                    </div>
+                    <div class="form-floating col-sm-6">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                            style="border-radius: 10px;">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <!-- penjelasan terkait class-class di dalam input tipe radio sama dengan input tipe checkbox yang ada di halaman login.html -->
+                    <div class="ps-2 mb-2 text-start col-sm-6">
+                        <p>Jenis Kelamin </p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="laki-laki">
+                            <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="perempuan">
+                            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                        </div>
+                    </div>
+                    <!-- class row pada div yaitu untuk membagi div-div di dalamnya menjadi beberapa kolom dalam 1 baris -->
+                    <div class="row col-12 text-start">
+                        <p>Tanggal Lahir</p>
+                        <!-- class col-4 yaitu mengambil 4 kolom dari total 12 kolom yang ada -->
+                        <div class="col-4">
+                            <!-- class form-select yaitu memberikan format bawaan bootstrap untuk input data tipe select -->
+                            <select id="inputTahun" class="form-select">
+                                <!-- option selected yaitu merupakan tampilan option awal yang otomatis muncul ketika halaman ditampilkan -->
+                                <!-- terdapat beberapa option yang di kosongkan karna akan panjang jika di inputkan manual
+                                    (belum nemu cara nampilkan tanggal secara otomatis pada select) -->
+                                <option selected>Tanggal</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                            </select>
+                        </div>
+                        <!-- penjelasan sama seperti sebelumnya -->
+                        <div class="col-4">
+                            <select id="inputBulan" class="form-select">
+                                <option selected>Bulan</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select id="inputTanggal" class="form-select">
+                                <option selected>Tahun</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                                <option>.....</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- div di luar button diberikan sengaja agar pengaturan posisi button bisa lebih fleksibel,
+                    penjelasan terkait class-class di dalam button nya sendiri sama seperti yang ada di halaman login.html -->
+                    <div class="col-sm-12 pt-3">
+                        <button class="btn w-25 py-2 text-light bg-success"
+                            style="border-radius: 20px;" type="submit">Daftar</button>
+                    </div>
+                    <p class=" text-body-secondary">© 2023</p>
+                </form>
+            </div>
+            <!-- penjelesan terkait row kedua didalam container div, sama seperti yang ada pada halaman login.html
+            hanya saja terdapat perbedaan untuk gambarnya yang mana di halaman daftar.html hanya 1 gambar yang di tampilkan dengan ukuran
+            keseluruhan di ambil 50% dari total 100% ukuran yang telah ditetapkan, terdapat pula text yang ditampilkan setelah gambar -->
+            <div class="d-none d-lg-block col-lg-6 h-100 py-5 bg-success">
+                <div class="row align-items-center p-5">
+                    <div class="col-12 pb-4">
+                        <img src="img/teamwork.png" class="w-50 h-50 img-fluid" alt="">
+                    </div>
+                    <div class="col-12 text-light">
+                        <h3>Selamat Datang</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio magnam sint, obcaecati voluptas
+                            molestiae ad hic possimus velit corporis tenetur omnis provident aperiam commodi ratione
+                            expedita quos totam aliquam temporibus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

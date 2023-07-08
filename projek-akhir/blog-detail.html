@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- penejelasan terkait script di dalam head sama seperti penjelasan di halaman index.html-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <title>Seribu Persen || Detail Page</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-opacity-25 py-3 fixed-top fs-6">
+        <div class="container">
+            <a class="btn bg-success text-white fs-6 me-lg-5" href="login.html">Masuk</a>
+
+            <h1 class="navbar-brand text-warning fs-2 ms-lg-5">Seribu Persen</h1>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+                        dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+                        untuk mengaktifkan toggle-->
+                        <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Layanan
+                        </a>
+                        <!-- merupakan isi dari dropdown atau anak text ketika text layanan di klik -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#layanan1">Konsultasi</a></li>
+                            <li><a class="dropdown-item" href="index.html#layanan2">Mentoring</a></li>
+                            <li><a class="dropdown-item" href="index.html#layanan3">Tes Kepribadian</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item dropdown ms-end">
+                        <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+                        dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+                        untuk mengaktifkan toggle-->
+                        <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Lainnya
+                        </a>
+                        <!-- merupakan isi dari dropdown atau anak text ketika text Lainnya di klik -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#penghargaan">Pencapaian</a></li>
+                            <li><a class="dropdown-item" href="index.html#qaa">Q & A</a></li>
+                            <li><a class="dropdown-item" href="index.html#instructors">Tentang Kami</a></li>
+                            <li><a class="dropdown-item" href="index.html#kontak">Kontak Informasi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <!-- membuat section untuk bagian content atau isi dari halaman detail.html -->
+    <!-- terdapat class p-5 atau padding ukuran 5 (1,2,3,4,5 ukuran yang bisa dipakai ketika menggunakan bootstrap) yang berguna membuat isi content menjadi ke tengah -->
+    <!-- terdapat pula class pt-5 yang berguna untuk menurunkan isi content dikarenakan tertutup oleh navbar maka harus diakalin dengan padding-top -->
+    <!-- dan class text-start untuk membuat alignment text berad di sebelah kiri -->
+    <section class=" p-5 pt-5 text-start">
+        <!-- membuat container pertama untuk menampung isi content -->
+        <!-- terdapat class container-fluid untuk membuat container menjadi lebih fleksibel ketika di resize (tidak terjadi offset atau overalpping 
+            ketika ukuran layar di perkecil atau di perbesar) -->
+        <!-- serta pt-5 untuk menambah padding-top agar content menjadi turun kebawah dikarenakan masih ketutupan navbar-->
+        <div class="container-fluid pt-5">
+            <!-- membuat container baru yang ada di dalam container yang menampung content, yang mana container ini akan di buat menajadi row-->
+            <div class="row">
+                <!-- membuat container baru lagi di dalam container row -->
+                <!-- terdapat class col-12 yang mana ketika ukuran layar kurang dari kategori lg(large) maka container akan mengambil 12 kolom dari total 12 kolom yang ada 
+                sedangkan untuk class col-lg-9, ketika ukuran layar masuk kategori lg(large) atau lebih besar daripada itu, maka container akan mengambil 9 kolom dari total
+                12 kolom yang ada-->
+                <div class="col-12 col-lg-9">
+                    <!-- membuat header text menggunakan element <h2> serta kalimatnya menggunakan kalimat template lorem ipsum -->
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minima maxime impedit.</h2>
+                    <!-- menampilkan image dengan class img-fluid (membuat gambar otomatis di resize sesuai dengan ukuran layar),
+                    serta mengambil gambar dari website lorem picsum yang secara random di generate (karena tidak menggunaka id atau memilih gambar mana yang mau ditampilkan),
+                    yaitu dengan lebar=1000px dan tinggi=550px, adapun alt= merupakan text yang akan muncul ketika gambar gagal di muat-->
+                    <img class="img-fluid" src="https://picsum.photos/1000/550" alt="">
+                    <!-- membuat container menampilkan text sebagi isi dari content-->
+                    <!-- terdapat class col-8 yaitu container akan hanya mengambil 8 kolom dari total 12 kolom yang ada sehingga tampilan text menjadi tidak full kesebelah kanan -->
+                    <!-- adapun class fs-5 yaitu untuk membuat ukuran text menjadi lebih besar -->
+                    <div class="col-8 fs-5">
+                        <!-- container tambahan -->
+                        <!-- terdapat class border yang gunakan untuk sebagai variasi yang mana border-2 adalah tingkat ketebalan border, kemudian border-warning(warna kuning),
+                        dan border-bottom untuk menampilkan border hanya bagian bawahnya saja -->
+                        <div class="fs-6 border-2 border-warning border-bottom">
+                            <!-- terdapat class h3 yang membuat ukuran text element <p> menjadi header 3 (menggunakan bootstrap) dan fw-bold yaitu membuat text menjadi lebih tebal -->
+                            <p class="h3 fw-bold">Lorem ipsum dolor sit</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum necessitatibus deserunt
+                                ratione nam facilis sed.</p>
+                        </div>
+                        <!-- container baru sebagai pemisah continer sebelumnya yang saya gunakan untuk menampilkan border bawahnya sebagai variasi -->
+                        <div>
+                            <!-- terdapat class fw-bolder yaitu membuat text menjadi sangat tebal -->
+                            <p class="fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                                porro
+                                eum nisi ducimus
+                                recusandae necessitatibus ratione inventore!</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam esse officiis vel
+                                veritatis, ipsum expedita.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde autem saepe odio quas
+                                consectetur in, itaque obcaecati similique adipisci reiciendis, repellendus officia
+                                accusamus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos facilis
+                                numquam perspiciatis dolor? Deserunt deleniti consectetur, suscipit dolorum nisi, libero
+                                corrupti, similique eveniet ducimus dolorem alias perspiciatis explicabo dicta
+                                reiciendis vero dolor?</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis
+                                aspernatur quaerat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quod, in illum atque
+                                consectetur corrupti nulla libero odio pariatur fugit aperiam assumenda, vitae provident
+                                molestiae dolorum error officia adipisci accusamus? Temporibus quibusdam eius alias
+                                iusto sed ea hic cumque, possimus sequi qui illo aperiam dolorem.</p>
+                        </div>
+                    </div>
+                    <!-- menampilkan image baru yang saya pisahkan dari container sebelumnya karena saya ingin imagenya tampil secara full
+                    dan tidak hanya 8 kolom saja seperti text yang ada di dalam div sebelumnya, adapun penjelasan tentang sumber gambar sama seperti penjelasan sebelumnya -->
+                    <img class="img-fluid" src="https://picsum.photos/1000/500" alt="">
+                    <!-- membuat kembali container baru setelah image untuk menampilkan text, jumlah dan penjelasan kolom sama seperti yang ada di container sebelumnya -->
+                    <div class="col-8 fs-5">
+                        <div>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam esse officiis vel
+                                veritatis, ipsum expedita.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde autem saepe odio quas
+                                consectetur in, itaque obcaecati similique adipisci reiciendis, repellendus officia
+                                accusamus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dignissimos facilis
+                                numquam perspiciatis dolor? Deserunt deleniti consectetur, suscipit dolorum nisi, libero
+                                corrupti, similique eveniet ducimus dolorem alias perspiciatis explicabo dicta
+                                reiciendis vero dolor?</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis
+                                aspernatur quaerat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quod, in illum atque
+                                consectetur corrupti nulla libero odio pariatur fugit aperiam assumenda, vitae provident
+                                molestiae dolorum error officia adipisci accusamus? Temporibus quibusdam eius alias
+                                iusto sed ea hic cumque, possimus sequi qui illo aperiam dolorem.</p>
+                        </div>
+                    </div>
+                    <!-- penjelasan tambahan, yaitu text yang saya buat menggunakan template lorem ipsum serta di bagi 
+                        menjadi beberapa paragraph agar mudah di baca (layaknya artikel) -->
+                </div>
+                <!-- container kedua yang menampung isi content (sub content)-->
+                <!-- terdapat class container-fluid yang penjelasannya sama seperti sebelumnya -->
+                <!-- serta class col-3 yang mengambil 3 kolom dari total 12 kolom yang ada ,sehingga tampilan isi dari container ini akan berada di sebelah kanan -->
+                <!-- adapun class d-none yaitu container akan di sembunyikan ketika ukuran layar lebih kecil dari lg(large) dan akan ditampilkan kembali ketika ukuran
+                kategorinya sama dengan lg(large) atau lebih dari itu menggunakan perintah d-lg-block-->
+                <div class="container-fluid col-3 d-none d-lg-block">
+                    <!-- membuat text header menggunakan class h3 untuk merubah ukuran text menjadi seperti ukuran h3-->
+                    <p class="h3">Cerita Terbaik</p>
+                    <!-- membuat container tambahan untuk sub content -->
+                    <!-- terdapat class my-3 atau margin vertikal untuk memberikan jarak antara container yang sekarang dengan yang ada di atasnya ataupun yang ada dibawahnya  -->
+                    <!-- terdapat pula class bg-sencondary-subtle yaitu membuat warna background container menjadi abu-abu -->
+                    <div class="my-3 bg-secondary-subtle">
+                        <!-- membuat text template lorem ipsum dengan ukuran h4 menggunakan class h4 yang ada di bootstrap -->
+                        <p class="h4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, earum.</p
+                            class="h4">
+                    </div>
+                    <!-- penjelasannya sama seperti container tambahan sebelumnya -->
+                    <div class="my-3 bg-secondary-subtle">
+                        <p class="h4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam architecto eius
+                            numquam nemo aliquid.</p class="h4">
+                    </div>
+                    <!-- penjelasannya sama seperti container tambahan sebelumnya -->
+                    <div class="my-3 bg-secondary-subtle">
+                        <p class="h4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p class="h4">
+                    </div>
+                    <!-- membuat header Unggulan sebagai pemisah sub content yang sekarang dengan sub content sebelumnya -->
+                    <p class="h3">Unggulan</p>
+                    <!-- terdapat class pb-3 yaitu membuat padding-bottom nya dengan ukuran 3 untuk membuat jarak antara div yang ini dengan apa yang ada dibawahnya -->
+                    <!-- terdapat pula class bg-secondary-subtle yang penjelasannya sama seperti sebelumnya -->
+                    <div class="pb-3 bg-secondary-subtle">
+                        <!-- menampilkan img dari web lorem picsum dengan id gambar 10, ukuran lebar=400 dan tinggi=200 -->
+                        <img class="img-fluid" src="https://picsum.photos/id/40/400/200" alt="">
+                        <!-- terdapat class m-3 yaitu margin untuk membuat teks menjadi agak di tengah -->
+                        <p class="h4 m-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, qui?</p
+                            class="h4">
+                    </div>
+                    <!-- penjelasan sama seperti sebelumnya hanya terdapat perbedaan di id gambar saja -->
+                    <div class="mt-3 pb-3 bg-secondary-subtle">
+                        <img class="img-fluid" src="https://picsum.photos/id/65/400/200" alt="">
+                        <p class="h4 m-3">Lorem ipsum dolor sit amet consectetur adipisicing.</p class="h4">
+                    </div>
+                    <!-- penjelasan sama seperti sebelumnya hanya terdapat perbedaan di id gambar saja -->
+                    <div class="mt-3 pb-3 bg-secondary-subtle">
+                        <img class="img-fluid" src="https://picsum.photos/id/77/400/200" alt="">
+                        <p class="h4 m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, magni nihil!
+                            Accusamus dignissimos.</p class="h4">
+                    </div>
+                    <!-- penjelasan sama seperti sebelumnya hanya terdapat perbedaan di id gambar saja -->
+                    <div class="mt-3 pb-3 bg-secondary-subtle">
+                        <img class="img-fluid" src="https://picsum.photos/id/83/400/200" alt="">
+                        <p class="h4 m-3">Lorem ipsum dolor sit amet consectetur.</p class="h4">
+                    </div>
+                    <!-- penjelasan sama seperti sebelumnya hanya terdapat perbedaan di id gambar saja -->
+                    <div class="mt-3 pb-3 bg-secondary-subtle">
+                        <img class="img-fluid" src="https://picsum.photos/id/79/400/200" alt="">
+                        <p class="h4 m-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla nemo.</p
+                            class="h4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- penjelasan terkait footer di halaman ini sama seperti penjelasan di halaman index.html -->
+    <footer class="p-5 bg-dark text-warning text-center position-relative">
+        <div class="container">
+            <p class="lead">&copy; 2023 Seribu Persen</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle text-warning h1"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- penjelasan terkait penggunaan javascript di halaman ini sama seperti di halaman index.html-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

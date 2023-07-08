@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- memasukan element viewport sebagai syarat untuk membuat web menjadi responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- saya menggunakan bootstrap versi 5 dengan metode CDN atau bootsrapnya di import secara online -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <!-- saya juga mengimport bootstrap icon untuk menambahkan beberapa icon ke dalam responsive web design yang saya buat -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <!-- mengimport css leaflet untuk membuat mapbox -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <title>Seribu Persen || Landing Page</title>
+</head>
+
+<body>
+  <!-- penjelasan terkait navbar hampir sama seperti tugas sebelumnya, hanya saja terdapat perubahan beberapa
+  tata letak dan juga jumlah dari link-link ataupun button di dalamnya -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-opacity-25 py-3 fixed-top fs-6">
+    <div class="container">
+      <!-- membuat button Masuk untuk berpindah ke halaman login.html -->
+      <a class="btn bg-success text-white fs-6 me-lg-5" href="login.html">Masuk</a>
+
+      <h1 class="navbar-brand text-warning fs-2 ms-lg-5">Seribu Persen</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Beranda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+              dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+              untuk mengaktifkan toggle-->
+            <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Layanan
+            </a>
+            <!-- merupakan isi dari dropdown atau anak text ketika text layanan di klik -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#layanan1">Konsultasi</a></li>
+              <li><a class="dropdown-item" href="#layanan2">Mentoring</a></li>
+              <li><a class="dropdown-item" href="#layanan3">Tes Kepribadian</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+
+          <li class="nav-item dropdown ms-end">
+            <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+              dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+              untuk mengaktifkan toggle-->
+            <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lainnya
+            </a>
+            <!-- merupakan isi dari dropdown atau anak text ketika text Lainnya di klik -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#penghargaan">Pencapaian</a></li>
+              <li><a class="dropdown-item" href="#qaa">Q & A</a></li>
+              <li><a class="dropdown-item" href="#instructors">Tentang Kami</a></li>
+              <li><a class="dropdown-item" href="#kontak">Kontak Informasi</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layanan 1 -->
+  <!-- membuat bagian section untuk layanan konsultasi -->
+  <!-- class bg-warning yaitu merubah warna background menjadi kuning -->
+  <!-- class text-dark merubah warna text menjadi hitam atau gelap -->
+  <!-- class bg-opacitry-25 merubah tingkat transparasi background menjadi 25% -->
+  <!-- class p-5 menambahkan padding sebanyak 5, p-lg-0 membuat padding kembali ke aturan awal atau 0 ketika ukuran layar ada dalam kategori large, 
+  pt-lg-5 menambahkan 5 padding atas ketika layar berada dalam kategori large-->
+  <!-- class text-center membuat tulisan menjadi ketengah, text-sm-start membuat tulisan menjadi di kiri ketika ukuran layar berada dalam kategori small-->
+  <!-- class bg-opacity-25 membuat transparasi background menjadi 25% -->
+  <section id="layanan1"
+    class="bg-warning text-dark bg-opacity-25 p-5 p-lg-0 pt-lg-5 pt-5 text-center text-sm-start bg-opacity-25">
+    <!-- class container membuat isi dari div berada di tengah dan memberikan padding standar -->
+    <!-- class pt-5 memberikan padding sebanyak 5 -->
+    <div class="container pt-5">
+      <!-- class d-sm-flex membuat container atau div menjadi flexible ketika berada di ukuran layar atau breakpoint small-->
+      <!-- class align-items-center mengatur isi dari div yaitu items atau child dari element flexible untuk berada di tengah -->
+      <!-- class justify-content-between membuat bagian kanan dan kiri pada konten menjadi merata -->
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <!-- class text-success membuat warna text menjadi hijau -->
+          <h1>Layanan Sosial <span class="text-success"> Seribu Persen </span></h1>
+          <!-- class lead membuat text menjadi sedikit lebih besar dan lebih tebal -->
+          <!-- class my-4 menambahkan margin atas sebanyak 4 -->
+          <p class="lead my-4">
+            Kami berfokus terhadapa penyelesaian masalah sosial, serta kepribadian untuk menjadikan
+            hidup menjadi lebih baik lagi.
+          </p>
+          <!-- class btn btn-success membuat button standar bawaan bootstrap dan diberi warna hijau -->
+          <!-- class btn-lg membuat ukuran button menjadi large atau lebih besar -->
+          <!-- data-bs-toggle modal digunakan untuk menampilkan modal, yang nantinya akan di jelaskan lebih lanjut di bagian scriptnya -->
+          <!-- data-bs-target #enroll yaitu merupakan target yang ingin di togle yang di sesuaikan dengan id nya -->
+          <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">
+            Mulai Mendaftar
+          </button>
+        </div>
+        <!-- class img-fluid membuat gambar menjadi fluid sesuai dengan ukuran layar -->
+        <!-- class w-50 mengambil 50% dari total 100% lebar kolom -->
+        <!-- class d-none yaitu menghilangkan tampilan gambar, sedangkan d-sm-block yaitu menampilkan gambar kembali ketika
+        ukuran layar berada di breakpoint small -->
+        <!-- src merupakan gambar yang ingin di tampilkan, sedangkan alt merupakan alternatif teks yang tampil jika gambar gagal ditampilkan -->
+        <img class="img-fluid w-50 d-none d-sm-block" src="img/talking.png" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Pencapaian -->
+  <!-- id penghargaan merupakan bagian section yang nantinya di tampilkan ketika link pencapaian di navbar di klik -->
+  <!-- class p-5 memberikan padding sebanyak 5 -->
+  <section id="penghargaan" class="p-5">
+    <!-- class container penjelasannya sama seperti sebelumnya -->
+    <div class="container">
+      <!-- class pb-4 memberikan padding bawah sebanyak 4 -->
+      <!-- class text-cente membuat text berada di tengah -->
+      <h3 class="pb-4 text-center">Terima Kasih Telah Mempercayai Kami</h3>
+      <!-- class row membuat isi dari div menjadi 1 baris atau row -->
+      <!-- class g-4 atau gutter-4 yaitu memberikan jarak atau spasi antara kolom-kolom di dalam row sebanyak 4 -->
+      <div class="row text-center g-4">
+        <!-- calss col-md-6 yaitu mengambil 6 kolom dari total 12 kolom yang ada ketika layar berada di ukuran medium -->
+        <!-- class col-lg yaitu mengambil kolom otomatis ketika layar berada di ukuran large -->
+        <div class="col-md-6 col-lg">
+          <!-- class card merupakan class bootstrap untuk membuat tampilan div menjadi seperti kartu -->
+          <!-- class bg-warning membuat background menjadi warna kuning -->
+          <!-- class text-dark membuat text menjadi warna hitam atau gelap -->
+          <div class="card bg-warning text-dark">
+            <!-- class card-body merupakan class bawaan bootstrap untuk membuat isi dari div berada di dalam div yang diberikan class card -->
+            <!-- class text-center membuat text berada di tengah -->
+            <div class="card-body text-center">
+              <!-- class h1 membuat ukuran font ataupun icon didalam div ini menjadi seukuran header 1 -->
+              <!-- class mb-3 memberikan margin bawah sebanyak 3 -->
+              <div class="h1 mb-3">
+                <!-- class bi bi-heart menampilkan logo hati yang di ambil dari bootstrap icon, yang link nya telah di masukan sebelumnya -->
+                <i class="bi bi-heart"></i>
+              </div>
+              <!-- class card-title membuat text di dalam card menjadi agak lebih besar dan tebal seperti ukuran text pada judul -->
+              <!-- class mb-3 memberikan margin bawah sebanyak 3 -->
+              <h3 class="card-title mb-3">2.000.000++</h3>
+              <!-- class card-text menampilkan text di dalam div yang di berikan class card -->
+              <p class="card-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Iure, quas quidem possimus dolorum esse eligendi?
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- penjelasan terkait card ini sama seperti sebelumnya, hanya saja terdapat perbedaan isi text, warna, dan icon di dalamnya -->
+        <div class="col-md-6 col-lg">
+          <div class="card bg-success text-light">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-fullscreen"></i>
+              </div>
+              <h3 class="card-title mb-3">2.000++</h3>
+              <p class="card-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Iure, quas quidem possimus dolorum esse eligendi?
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- penjelasan terkait card ini sama seperti sebelumnya -->
+        <!-- penjelasan tambahan, pada class col-md-6 akan mengambil 6 kolom dari total 12 kolom yang ada, namun dikarenakan 12 kolom telah di ambil
+        semua oleh 2 card di atas, yaitu 6 + 6, maka kolom untuk card ini dan card setelahnya akan tampil di bawahnya -->
+        <div class="col-md-6 col-lg">
+          <div class="card bg-warning text-dark">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-bag"></i>
+              </div>
+              <h3 class="card-title mb-3">35.000++</h3>
+              <p class="card-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Iure, quas quidem possimus dolorum esse eligendi?
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- penjelasana terkait card ini sama seperti sebelumnya -->
+        <div class="col-md-6 col-lg">
+          <div class="card bg-success text-light">
+            <div class="card-body text-center">
+              <div class="h1 mb-3">
+                <i class="bi bi-award"></i>
+              </div>
+              <h3 class="card-title mb-3">100.000++</h3>
+              <p class="card-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Iure, quas quidem possimus dolorum esse eligendi?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan 2 & 3 -->
+  <!-- id layanan2 merupakan bagian section yang nantinya di tampilkan ketika link mentoring di navbar di klik  -->
+  <!-- class p-5 memberikan padding sebanyak 5 -->
+  <!-- class bg-warning membuat background section ini menjadi warna kuning, dan text-dark membuat warna text menjadi hitam -->
+  <section id="layanan2" class="p-5 bg-warning text-dark">
+    <!-- pejelasan terkait class container sama seperti penjelasan sebelumnya -->
+    <div class="container">
+      <!-- penjelasan terkait class di dalam div ini sama seperti penjelasan sebelumnya -->
+      <div class="row align-items-center justify-content-between">
+        <!-- class col-md membuat kolom yang di ambil otomatis ketika ukuran layar berada di breakpoint medium -->
+        <div class="col-md">
+          <!-- penjelasan src dan alt sama seperti penjelasan sebelumnya -->
+          <!-- penjelasan class img-fluid sama seperti sebelumnya -->
+          <img src="img/mentoring.png" class="img-fluid" alt="" />
+        </div>
+        <!-- penjelasan class col-md sama seperti sebelumnya -->
+        <!-- class p-5 memberikan padding sebanyak 5 -->
+        <div class="col-md p-5">
+          <h2>Proses Mentoring</h2>
+          <!-- class lead membuat ukuran text yang ada menjadi sedikit lebih besar -->
+          <p class="lead">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Similique deleniti possimus magnam corporis ratione facere!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            reiciendis eius autem eveniet mollitia, at asperiores suscipit
+            quae similique laboriosam iste minus placeat odit velit quos,
+            nulla architecto amet voluptates?
+          </p>
+          <!-- class btn btn-dark text-warning yaitu membuat button berwarna hitam dengan text berwarna kuning -->
+          <!-- class mt-3 memberikan margin atas sebanyak 3 -->
+          <a href="#" class="btn btn-dark text-warning mt-3">
+            <!-- class bi bi-chevron-right memberikan icon > , penjelasan terkait icon sama seperti penjelasan sebelumnya -->
+            <i class="bi bi-chevron-right"></i> Selengkapnya
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- penjelasan terkait section tes kepribadian sama seperti sebelumnya, hanya saja terdapat perdaan di bagian id, warna background dan text,
+  serta gambarn dan icon yang ada -->
+  <section id="layanan3" class="p-5 bg-success text-light">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md p-5">
+          <h2>Tes Kepribadian</h2>
+          <p class="lead">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Similique deleniti possimus magnam corporis ratione facere!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            reiciendis eius autem eveniet mollitia, at asperiores suscipit
+            quae similique laboriosam iste minus placeat odit velit quos,
+            nulla architecto amet voluptates?
+          </p>
+          <a href="#" class="btn btn-light text-success mt-3">
+            <i class="bi bi-chevron-right"></i> Selengkapnya
+          </a>
+        </div>
+        <div class="col-md">
+          <img src="img/checklist.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q & A -->
+  <!-- id questions merupakan bagian section yang nantinya di tampilkan ketika link Q & A di navbar di klik-->
+  <!-- class p-5 memberikan padding sebanyak 5-->
+  <section id="qaa" class="p-5">
+    <!-- penjelasan terkait class ini sama seperti penjelasan sebelumnya -->
+    <div class="container">
+      <!-- class text dan mb sama seperti penjelasan sebelumnya -->
+      <h2 class="text-center mb-4">Pertanyaan Yang Paling Sering Ditanyakan?</h2>
+      <!-- class accordion merupakan class bawaan bootstrap yang mirip seperti class dropdown, hanya saja accordian menampilkan detail isinya
+      yaitu per item atau per div dan bukan semuanya sekaligus seperti dropdown-->
+      <!-- class accordion-flush merupakan class tambahan untuk menghilangkan margin atau tampilan dari isi accordion-->
+      <!-- id questions digunakan untuk menandai div ketika nanti ingin di program menggunakan javascript -->
+      <div class="accordion accordion-flush" id="questions">
+        <!-- Item 1 -->
+        <!-- class accordion-item class bawaan bootstrap untuk menampung isi div dari judul dan konten accordion di dalamnya-->
+        <div class="accordion-item">
+          <!-- calss accordion-header merupakan class bawaan bootstrap untuk menjadi judul acordion yang menampung konten didalamnya -->
+          <h2 class="accordion-header">
+            <!-- class accordion-button collapsed membuat accordion menjadi button dan konten di dalamnya otomatis di sembunyikan-->
+            <!-- data-bs-toggle="collapse" yaitu untuk men toggle konten apakah ingin di sembunyikan atau ditampilkan -->
+            <!-- data-bs-target merupakan yaitu merupakan target id dari konten yang ingin di toogle -->
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#question-one">
+              Dimana lokasi konsultasinya?
+            </button>
+          </h2>
+          <!-- id question-one merupakan target id dari button sebelumnya ketika di toogle -->
+          <!-- class accordion-collapse yaitu untuk menandai bagian div mana yang ingin di sembunyikan sebelum di toogle,
+          sedangkan collapase yaitu memberikan status awal dari konten, yang mana disembunyikan sebelum di toogle -->
+          <!-- data-bs-parent merupakan pengait elemen akordion terkait dengan elemen induk yang mengontrol perilaku akordion-->
+          <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <!-- class accordion-body merupakan div yang menjadi tampungan dari konten accordion -->
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              beatae fuga animi distinctio perspiciatis adipisci velit maiores
+              totam tempora accusamus modi explicabo accusantium consequatur,
+              praesentium rem quisquam molestias at quos vero. Officiis ad
+              velit doloremque at. Dignissimos praesentium necessitatibus
+              natus corrupti cum consequatur aliquam! Minima molestias iure
+              quam distinctio velit.
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <!-- penjelasan terkait item 2, 3, 4, dan 5 sama seperti penjelasan sebelumnya -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#question-two">
+              Berapa biaya yang dikeluarkan untuk mendaftar?
+            </button>
+          </h2>
+          <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              beatae fuga animi distinctio perspiciatis adipisci velit maiores
+              totam tempora accusamus modi explicabo accusantium consequatur,
+              praesentium rem quisquam molestias at quos vero. Officiis ad
+              velit doloremque at. Dignissimos praesentium necessitatibus
+              natus corrupti cum consequatur aliquam! Minima molestias iure
+              quam distinctio velit.
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#question-three">
+              Apa saja yang perlu di lakukan?
+            </button>
+          </h2>
+          <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              beatae fuga animi distinctio perspiciatis adipisci velit maiores
+              totam tempora accusamus modi explicabo accusantium consequatur,
+              praesentium rem quisquam molestias at quos vero. Officiis ad
+              velit doloremque at. Dignissimos praesentium necessitatibus
+              natus corrupti cum consequatur aliquam! Minima molestias iure
+              quam distinctio velit.
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#question-four">
+              Bagaimana cara mendaftar?
+            </button>
+          </h2>
+          <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              beatae fuga animi distinctio perspiciatis adipisci velit maiores
+              totam tempora accusamus modi explicabo accusantium consequatur,
+              praesentium rem quisquam molestias at quos vero. Officiis ad
+              velit doloremque at. Dignissimos praesentium necessitatibus
+              natus corrupti cum consequatur aliquam! Minima molestias iure
+              quam distinctio velit.
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#question-five">
+              Kenapa aku ganteng?
+            </button>
+          </h2>
+          <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              beatae fuga animi distinctio perspiciatis adipisci velit maiores
+              totam tempora accusamus modi explicabo accusantium consequatur,
+              praesentium rem quisquam molestias at quos vero. Officiis ad
+              velit doloremque at. Dignissimos praesentium necessitatibus
+              natus corrupti cum consequatur aliquam! Minima molestias iure
+              quam distinctio velit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentor -->
+  <!-- id instructors merupakan bagian section yang nantinya di tampilkan ketika link tentang kami pada navbar di klik-->
+  <!-- penjelasan terkait class di dalam section sama seperti penjelasan sebelumnya -->
+  <section id="instructors" class="p-5 bg-warning">
+    <!-- penjelasan terkait class container sama seperti penjelasan sebelumnya -->
+    <div class="container">
+      <!-- penjelasan terkait text sama seperti penjelasan sebelumnya -->
+      <h2 class="text-center text-dark">Mentor Seribu Persen</h2>
+      <!-- penjelasan terkait class di dalam p sama seperti penjelasan sebelumnya -->
+      <p class="lead text-center text-dark mb-5">
+        Mentor Seribu Persen memiliki gelar sarjana Psikologi (S.Psi) yang berasal dari berbagai
+        universitas terbaik di Indonesia. Sebelum resmi diangkat menjadi Mentor, seluruh Mentor
+        Seribu Persen harus mengikuti proses training dan pelatihan khusus yang diberikan oleh Psikolog Seribu Persen.
+      </p>
+      <!-- penjelasan terkait class di dalam div sama seperti sebelumnya -->
+      <div class="row g-4">
+        <!-- class col-md-6 yaitu mengambil 6 kolom ketika berada di breakpoint medium dari total 12 kolom yang ada-->
+        <!-- class col-lg-3 yaitu mengambil 3 kolom ketika berada di breakpoint large dari total 12 kolom yang ada -->
+        <div class="col-md-6 col-lg-3">
+          <!-- penjelasan terkait card dan icon bootstrap sama seperti sebelumnya -->
+          <div class="card bg-success text-light">
+            <div class="card-body text-center">
+              <!-- penjelasan terkait source gambar, yaitu gambar di ambil dari website picsum -->
+              <img src="https://randomuser.me/api/portraits/men/18.jpg" class="rounded-circle mb-3" alt="" />
+              <h3 class="card-title text-dark mb-3">Mang Asep</h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+              </p>
+              <!-- penjelasan tambahan terkait class mx-1 yaitu memberikan margin kanan-kiri sebanyak 1 -->
+              <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+              <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+              <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- penejelasan terkait bagian ini sama seperti penjelasan yang sebelumnya -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card bg-success text-dark">
+            <div class="card-body text-center">
+              <img src="https://randomuser.me/api/portraits/women/18.jpg" class="rounded-circle mb-3" alt="" />
+              <h3 class="card-title text-light mb-3">Neng Wati</h3>
+              <p class="card-text text-dark">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+              </p>
+              <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+              <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+              <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- penejelasan terkait bagian ini sama seperti penjelasan yang sebelumnya -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card bg-success">
+            <div class="card-body text-center">
+              <img src="https://randomuser.me/api/portraits/men/3.jpg" class="rounded-circle mb-3" alt="" />
+              <h3 class="card-title mb-3">Mas Yudi</h3>
+              <p class="card-text text-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+              </p>
+              <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+              <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+              <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- penejelasan terkait bagian ini sama seperti penjelasan yang sebelumnya -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card bg-success">
+            <div class="card-body text-center">
+              <img src="https://randomuser.me/api/portraits/women/13.jpg" class="rounded-circle mb-3" alt="" />
+              <h3 class="card-title text-light mb-3">Mbak Sarah</h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+              </p>
+              <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+              <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+              <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- kontak & Map -->
+  <!-- id instructors merupakan bagian section yang nantinya di tampilkan ketika link tentang kami pada navbar di klik-->
+  <!-- class p-5 memberikan padding sebanyak  -->
+  <section id="kontak" class="p-5">
+    <!-- penjelasan terkait class di dalam div ini sama seperti sebelumnya -->
+    <div class="container text-success">
+      <!-- penjelasan terkait class di dalam div ini sama seperti penjelasan sebelumnya -->
+      <div class="row g-4">
+        <!-- class col-sm-12 mengambil semua kolom yang ada ketika layar berada di ukuran small -->
+        <!-- class col-md-6 mengambil 6 kolom dari total 12 kolom yang ada ketika layar berada di ukuran medium -->
+        <div class="col-sm-12 col-md-6">
+          <!-- penjelasan terkait class di dalam h2 sama seperti penjelasan yang sebelumnya -->
+          <h2 class="text-center mb-4">Kontak Informasi</h2>
+          <!-- class list-group merupakan class bawaan bootstrap untuk merapikan tampilkan list yang ada didalamnya -->
+          <!-- class list-group-flush diberikan untuk untuk mengatur tampilan list tanpa margin tambahan di antara item-itemnya -->
+          <!-- class lead membuat ukuran text menjadi sedikit lebih besar -->
+          <ul class="list-group list-group-flush lead">
+            <!-- class list-group-item digunakan untuk membuat item dalam list atau untuk merapikan listed ordered nya-->
+            <li class="list-group-item">
+              <!-- class fw-normal membuat ketebalan text menjadi normal atau kembali ke default settingnya-->
+              <span class="fw-normal">Alamat Tempat:</span> Jalan Wangi No.197
+            </li>
+            <!-- penjelasan terkait class-class di dalam li berikut sama seperti penjelasan sebelumnya -->
+            <li class="list-group-item">
+              <span class="fw-normal">Telepon Pendaftaran:</span> (+62) 822-3946-2124
+            </li>
+            <li class="list-group-item">
+              <span class="fw-normal">Customer Service:</span> (+62) 851-5887-1220
+            </li>
+            <li class="list-group-item">
+              <span class="fw-normal">Email:</span> hello@seribupersen.net
+            </li>
+            <li class="list-group-item">
+              <span class="fw-normal">Info Kerjasama:</span>
+              partnership@seribupersen.net
+            </li>
+          </ul>
+        </div>
+        <!-- penjelasan terkait class didalam div ini sama seperti penjelasan yang ada sebelumnya -->
+        <div class="col-sm-12 col-md-6">
+          <!-- id map diberikan untuk memanggil peta pada api serdehana yang di masukan di dalam tugas ini, adapun penjelasan terkait mapnya,
+          akan di jelaskan di bagian javascripnya -->
+          <!-- style widht 100% yaitu mengambil 100% lebar yang ada di dalam kolom,
+          sedangkan height 300px yaitu memberikan tinggi sebanyak 300 piksel -->
+          <div id="map" style="width: 100%; height: 300px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- penejelasan terkait class-class di dalam footer sama seperti penjelasan sebelumnya -->
+  <!-- class position-relative digunakan untuk mengatur posisi elemen menjadi relatif terhadap posisi normalnya -->
+  <footer class="p-5 bg-dark text-warning text-center position-relative">
+    <div class="container">
+      <p class="lead">&copy; 2023 Seribu Persen</p>
+
+      <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle text-warning h1"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <!-- class modal digunakan untuk mengatur tampilan dan perilaku elemen modal -->
+  <!-- calss fade digunakan untuk memberikan efek fade atau memudar ketika elemen modal ditampilkan atau disembunyikan -->
+  <!-- id enroll yang nantinya akan di panggil ketika tombol mulai mendaftar pada section layanan konsultasi di klik -->
+  <!-- tabindex digunakan untuk mengatur urutan fokus saat elemen menerima input dari keyboard -->
+  <!-- arial-labelledby dan aria-hidden adalah atribut aksesibilitas yang digunakan untuk memberikan informasi kepada 
+    pembaca layar tentang elemen modal -->
+  <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <!-- class modal-dialog digunakan untuk mengelompokkan dan mengatur konten dalam elemen modal -->
+    <div class="modal-dialog">
+      <!-- class modal-content digunakan untuk mengelompokkan dan mengatur konten utama dalam elemen modal -->
+      <div class="modal-content">
+        <!-- class modal-header digunakan untuk mengelompokkan dan mengatur bagian judul atau header dalam elemen modal -->
+        <!-- class bg-warning membuat background menjadi warna kuning -->
+        <div class="modal-header bg-warning">
+          <!-- class modal-title digunakan untuk mengatur tampilan dan gaya judul dalam elemen modal -->
+          <!-- id enrollLabel digunakan untuk menghubungkan elemen judul dengan atribut "aria-labelledby" -->
+          <h5 class="modal-title" id="enrollLabel">Pendaftaran</h5>
+          <!-- class btn-close digunakan untuk memberikan tampilan dan gaya tombol close atau tutup -->
+          <!-- data-bs-dismis digunakan untuk memberikan perilaku yang diaktifkan saat tombol diklik yaitu menutup modal -->
+          <!-- arial-label merupakan label atau penamaan yaitu close -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- class modal-body digunakan untuk menampung isi konten dari modal -->
+        <div class="modal-body">
+          <!-- penjelasan terkait class lead sama seperti penjelasan sebelumnya -->
+          <p class="lead">isikan kolom berikut</p>
+          <form>
+            <div class="mb-3">
+              <!-- for digunakan untuk mengaitkan label dengan elemen formulir terkait -->
+              <!-- class col-form-label digunakan untuk mengatur tampilan dan gaya label dalam elemen formulir -->
+              <label for="first-name" class="col-form-label">
+                Nama Depan:
+              </label>
+              <!-- class form-control digunakan untuk memberikan tampilan dan gaya yang konsisten pada elemen input dalam formulir -->
+              <!-- id digunakan untuk mengaitkan label dengan elemen input menggunakan atribut "for" pada elemen label -->
+              <input type="text" class="form-control" id="first-name" />
+            </div>
+            <!-- penjelasan 3 div berikut ini sama seperti penjelasan sebelumnya -->
+            <div class="mb-3">
+              <label for="last-name" class="col-form-label">Nama Belakang:</label>
+              <input type="text" class="form-control" id="last-name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="col-form-label">Nomor Hp:</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+          </form>
+        </div>
+        <!-- class modal-footer digunakan untuk mengelompokkan dan mengatur bagian footer dalam elemen moda-->
+        <div class="modal-footer">
+          <!-- penjelasan terkait button ini sama seperti penejelasan button sebelumnya -->
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
+            Tutup
+          </button>
+          <button type="button" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- memanggil dan menggunakan file javascript bootstrap untuk mengaktifkan fitur dropdown, accordion, dan modal dari bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+
+  <!-- memanggil dan menggunakan file javascript untuk mengakrtifkan api mapbox di dalam tugas kali ini-->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // membuat variabel map yang nantinya akan dipanggil untuk menampilkan mapbox
+    // setview digunakan untuk menentukan kordinat lokasi yang ingin di tampilkan di map, dan di zoom (17%)
+    var map = L.map('map').setView([-7.79348, 110.40723], 17);
+    // menampilkan layer logo leaflet dan juga text beserta linknya untuk menghargai copyright openstreetmap atau hak cipta
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    // memberikan marker di titik kordinat yang telah di tentukan
+    var marker = L.marker([-7.79348, 110.40723]).addTo(map);
+    // memberikan teks penjelasan pada titik kordinat yang di marker
+    marker.bindPopup("Alamat Tempat").openPopup();
+
+    // membuat variable popup untuk menampilkan titik kordinat dan teks ketika bagian di dalam mapbox di klik
+    var popup = L.popup();
+    // membuat function untuk menampilkan titik kordinat dan text ketika bagian di dalam mapbox di klik
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("Kordinat yang klik adalah " + e.latlng.toString())
+        .openOn(map);
+    }
+    // mengaktifkan function tersebut ketikan di klik
+    map.on('click', onMapClick);
+  </script>
+</body>
+
+</html>

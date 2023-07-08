@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- penejelasan terkait script di dalam head sama seperti penjelasan di halaman index.html-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <title>Seribu Persen || Blog Page</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-opacity-25 py-3 fixed-top fs-6">
+        <div class="container">
+            <a class="btn bg-success text-white fs-6 me-lg-5" href="login.html">Masuk</a>
+
+            <h1 class="navbar-brand text-warning fs-2 ms-lg-5">Seribu Persen</h1>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+                        dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+                        untuk mengaktifkan toggle-->
+                        <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Layanan
+                        </a>
+                        <!-- merupakan isi dari dropdown atau anak text ketika text layanan di klik -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#layanan1">Konsultasi</a></li>
+                            <li><a class="dropdown-item" href="index.html#layanan2">Mentoring</a></li>
+                            <li><a class="dropdown-item" href="index.html#layanan3">Tes Kepribadian</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+
+                    <li class="nav-item dropdown ms-end">
+                        <!-- pada bagian ini dropdownnya ada di bagian a atau text Lainnya yang mana diberikan perintah dropdown-toggle
+                        dengan role button (perintah bawaan bootsrap), dan data-bs-toggle = dropdown yang merupakan atribut dari bootstrap
+                        untuk mengaktifkan toggle-->
+                        <!-- terdapat pula aria-expanded = false yaitu anak text tidak akan muncul di bawah text lainnya sebelum di klik -->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Lainnya
+                        </a>
+                        <!-- merupakan isi dari dropdown atau anak text ketika text Lainnya di klik -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#penghargaan">Pencapaian</a></li>
+                            <li><a class="dropdown-item" href="index.html#qaa">Q & A</a></li>
+                            <li><a class="dropdown-item" href="index.html#instructors">Tentang Kami</a></li>
+                            <li><a class="dropdown-item" href="index.html#kontak">Kontak Informasi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- membuat section untuk membagi antara bagain header, content dan footer -->
+    <!-- pada bagian ini terdapat class p-5 atau 1rem paddding yang di kali 3 (bisa di rubah ukuran nya jika ingin lebih besar pada css bootstrap) -->
+    <!-- terdapat pula class p-lg-5 dan pt-lg-5 yang mana padding-5 dan padding-top 5 (tambahan) akan aktif ketika memasuki breakpoint large
+    atau screen size ukuran dekstop-->
+    <!-- terdapat class text-center untuk membuat text berada di tengah, dan text-sm-start yang mana teks akan diatur
+    mengikuti layout dari sisi kiri pada elemen, sm sendiri merupakan breakpoint small yang mana teks akan di atur seperti itu pada ukuran layar
+    kategori small  -->
+    <section class=" p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+        <!-- Content -->
+        <!-- membuat div sebagai container dan class container-fluid yang mana isi dari apa yang ada di dalam div tidak akan keluar dari dalam div
+        atau bisa dibilang offset, terdapat pula pt-5 atau padding-top 5 (1,2,3,4,5 sendiri merupakan ukuran default bawaan bootstrap)-->
+        <div class="container-fluid pt-5">
+            <!-- terdapat class d-none atau display none atau bagian yang mengandung class ini tidak akan di tampilkan (di hidden) -->
+            <!-- terdapat class d-md-block, yang mana ketika display telah mencapai kategori medium (breakpoint pada bootstrap), maka
+            bagian yang mengandung class ini akan di tampilkan (perintah d-none sebelumnya akan di block atau tidak aktif) -->
+            <h3 class=" d-none d-md-block"> Terbaru</h3>
+            <div>
+                <!-- terdapat class row yang digunakan untuk mengelompokkan dan menampung satu atau beberapa kolom dalam suatu baris -->
+                <div class="row">
+                    <!-- terdapat class container-fluid, p-1 atau padding 1 -->
+                    <!-- terdapat class col-lg-6 yang mana div pada bagain ini akan mengambil 6 kolom dari kiri ketika ukuran layar memasuki 
+                        kategori larger pada breakpoint -->
+                    <!-- sedangkan class col-sm-12 adalah ketika ukuran layar memasuki kategori small pada breakpoint, maka div pada bagian ini akan
+                    mengambil 12 kolum dari total kolom keseluruhan yaitu 12-->
+                    <!-- terdapat pula class card border-0 yang mana tampilan dari div akan dibuat menjadi card(desain bawaan bootstrap) dengan-0 
+                    (secara default border card adalah 3 atau tidak lancip)-->
+                    <div class="container-fluid p-1 col-lg-6 col-sm-12 card border-0 ">
+                        <!-- terdapat class text-reset dan text-decoration-none, yang mana menghilankan garis bawah pada hyperlink(secara default
+                            biasanya ada garis bawah pada hyperlink) serta merubah warna text menjadi default atau kembali seperti sebelumnya
+                            (biasanya hyperlink membuat warna text menjadi biru) -->
+                        <!-- terdapat pula href = blog-detail.html yang ketika bagian ini di klik maka akan mengarah ke page blog-detail.html -->
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <!-- menampilkan image atau gambar yang diambil dari website lorem picsum, yang mana id gambarnya = 265 dengan lebar = 700px dan tinggi = 400px -->
+                            <!-- terdapat class img-fluid yang mana ukuran gambar akan menyesuaikan ukuran dari layar (bagian penting dari responsive web)-->
+                            <!-- terdapat pula class card-img yang merupakan perintah untuk menampilkan gambar di dalam card (desain bawaan bootstrap),
+                            dan rounded-0 yaitu membuat corner dari gambar menjadi lancip (secara default card akan membuat corner dari gambar menjadi tidak lancip)
+                            , terdapat pula perintah alt = ... yaitu merupakan default text yang akan muncul jika gambar tidak bisa muncul atau gagal di load-->
+                            <img src="https://picsum.photos/id/265/700/400" class="img-fluid card-img rounded-0"
+                                alt="...">
+                            <!-- terdapat class card-body yang digunakan sebagai container untuk memuat isi konten dalam sebuah card -->
+                            <!-- terdapat pula card-img-overlay yang digunakan untuk menempatkan sebuah lapisan atau overlay pada 
+                                bagian atas dari sebuah gambar pada komponen yang mana pada web design kali ini saya gunakan untuk menampilkan text pada gambar-->
+                            <!-- dan class text-light yaitu untuk membuat warna text menjadi putih atau light (warna putih) -->
+                            <div class="card-body card-img-overlay text-light">
+                                <!-- terdapat class card-title pada h3 yang berguna sebagai title atau judul dari text yang ingin di tampilkan -->
+                                <h3 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+                                <!-- terdapat class card-text yaitu menampilkan text pada card-->
+                                <!-- terdapat pula class d-none yaitu menyembunyikan element pada halaman web dan d-md-block untuk memunculkan kembali 
+                                element yang sebelumnya di sembunyikan ketika mencapai breakpoint medium(md)-->
+                                <p class="card-text d-none d-md-block">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- membuat div baru sebagai container dengan class col-lg-6 atau kolom 6 (setengah dari kolom yang di ambil sebelumnya)-->
+                    <div class="col-lg-6">
+                        <!-- membuat div baru sebagai row untuk menampung beberapa kolom di dalamnya, dan py-auto yaitu padding atas-bawah(kordinat Y) 
+                        yang di set auto-->
+                        <div class="row py-auto">
+                            <!-- terdapat div sebagai kolom pertama yang ada di dalam div row-->
+                            <!-- terdapat class p-1 yaitu padding 1 -->
+                            <!-- terdapat class col-lg-6 dan col-md-6 yaitu akan mengambil 6 kolom dari total 12 kolom yang ada didalam row
+                                yang mana pada row sendiri merupakan 6 kolom yang di ambil dari total 12 kolom yang ada pada container sebelumnya,
+                            sedangkan lg(large) dan md(medium) merupakan breakpoint yang mana 6 kolom tersebut akan di ambil ketika breakpoint telah
+                            memenuhi kategori tersebut-->
+                            <!-- terdapat pula class d-none dan d-md-block yang mana ketika breakpoint telah kurang dari ukuran kategori medium(md)
+                            maka elemennya akan di sembunyikan dan ketika mencapai ukuran medium(md) atau lebih, maka elemennya akan ditampilkan -->
+                            <!-- terdapat pula class card border-0 yang sama seperti penjelasan sebelumnya tentang card -->
+                            <div class="p-1 col-lg-6 col-md-6 d-none d-md-block card border-0">
+                                <!-- terdapat class text-reset text-decoration-none dan href = blog-detail.html yang mana sama juga seperti penjelasan sebelumnya -->
+                                <a class="text-reset text-decoration-none" href="blog-detail.html">
+                                    <!-- terdapat element img yang penjelasannya sama seperti sebelumnya hanya terdapat perbedaan pada id gambar dan ukurannya-->
+                                    <img src="https://picsum.photos/id/233/700/400" class="img-fluid img" alt="">
+                                    <!-- terdapat class card-body card-img-overlay text-light yang penjelasannya sama seperti sebelumnya-->
+                                    <div class="card-body card-img-overlay text-light">
+                                        <!-- terdapat class card-title yang penjelasannya sama seperti sebelumnya -->
+                                        <h5 class="card-title">Lorem, ipsum dolor sit amet</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- penjelasan div dan elementnya sama seperti sebelumnya -->
+                            <div class="p-1 col-lg-6  col-md-6 d-none d-md-block card border-0">
+                                <a class="text-reset text-decoration-none" href="blog-detail.html">
+                                    <img src="https://picsum.photos/id/232/700/400" class="img-fluid" alt="">
+                                    <div class="card-body card-img-overlay text-light">
+                                        <h5 class="card-title">Lorem, ipsum dolor sit.</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- penjelasan div dan elementnya sama seperti sebelumnya -->
+                            <div class="p-1 col-lg-6  col-md-6 d-none d-md-block card border-0">
+                                <a class="text-reset text-decoration-none" href="blog-detail.html">
+                                    <img src="https://picsum.photos/id/123/700/400" class="img-fluid" alt="">
+                                    <div class="card-body card-img-overlay text-light">
+                                        <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- penjelasan div dan elementnya sama seperti sebelumnya -->
+                            <div class="p-1 col-lg-6  col-md-6 d-none d-md-block card border-0">
+                                <a class="text-reset text-decoration-none" href="blog-detail.html">
+                                    <img src="https://picsum.photos/id/254/700/400" class="img-fluid" alt="">
+                                    <div class="card-body card-img-overlay text-light">
+                                        <h5 class="card-title">Lorem, ipsum dolor</h5>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- penjelasan tambahan untuk beberapa div yang sebelumnya yang mana tampilan layoutnya akan berubah ketika ukuran breakpointnya
+                            telah memenuhi kategori tertentu, misalnya ketika breakpoint nya memenuhi kategori lg(large) atau lebih besar daripada large, maka gambar pada
+                            container div pertama akan akan mengambil 6 kolom dan container div kedua yang di buat menjadi row akan menampung 4 gambar yang masing-masing gambar
+                            akan mengambil 6 kolom dari total 12 kolom yang ada di dalam di dalam container tersebut sehingga tampilannya akan menjadi 1 gambar besar di sebelah
+                            kiri dan 4 gambar yang di bagi menjadi 2 baris karna masing-masing gambar mengambil 6 kolom dari total 12 kolom, maka 2 gambar pertama akan berada
+                            pada baris pertama dan 2 gambar kedua akan berada di baris kedua (dikarenakan 12 kolom sebelumnya telah penuh diambil oleh 2 gambar pertama)-->
+
+                            <!-- kemudian ketika breakpoint nya memenuhi kategori md(medium) atau lebih kecil daripada large, maka gambar pada container div pertama akan mengambil 12 kolom,
+                            sehingga 4 gambar yang ada pada container div kedua akan turun kebawah (dikarenakan 12 kolomnya telah di ambil oleh container pertama)-->
+
+                            <!-- dan ketika breakpointnya telah lebih kecil daripada kategori md(medium) maka perintah d-none akan dijalankan yang mana ketika ukuran layar
+                            di kecilkan maka tampilan dari 4 gambar pada container div kedua (yang dibuat row) akan di sembunyikan, dan akan kembali muncul ketika ukuran layar di rubah
+                            menjadi md(medium) atau lebih besar dengan perintah d-md-block-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- membuat container div baru yang di pisahkan dari container sebelumnya yang mana penjelasan class container-fluid dan pt-3 sama seperti penjelasan sebelumnya-->
+        <div class="container-fluid pt-3">
+            <!-- membuat header untuk membuat judul bagian Berita dengan id = berita yang mana ketika link berita pada navbar di klik, maka akan mengarah ke bagian sini -->
+            <!-- terdapat pula class border-4 untuk ketebalan bordernya, kemudian border-warning untuk warna bordernya, dan border-start yaitu untuk menampilkan
+            border hanya bagian kirinya saja-->
+            <h3 id="berita" class="border-4 border-warning border-start ps-3">Berita</h3>
+            <!-- membuat container untuk bagian berita -->
+            <div>
+                <!-- membuat container di dalam container berita yang di buat menjadi row-->
+                <div class="row">
+                    <!-- membuat container untuk menampung gambar dan text -->
+                    <!-- terdapat class px-2 atau padding kanan-kiri (kordinat X atau horizontal) untuk membuat padding kanan-kiri menjadi 2-->
+                    <!-- terdapat pula class col-lg-4 dan col-md-4 yang mana container pertama pada container row ini akan mengambil 4 kolom pertama dari total 12 kolom yang ada -->
+                    <div class="px-2 col-lg-4 col-md-4 ">
+                        <!-- terdapat class text-reset text-decoration-none dan href = blog-detail.html, yang penjelasannya sama seperti penjelasan sebelumnya-->
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <!-- menampilkan gambar dengan element img yang penjelasannya sama seperti sebelumnya, hanya saja pada class nya
+                            terdapat perintah d-none dan d-md-block yang mana gambar di sembunyikan ketika ukuran layar kurang dari md(medium)
+                        dan akan kembali di munculkan ketika breakpoint nya telah memenuhi kategori md(medium) atau lebih besar daripada itu-->
+                            <img src="https://picsum.photos/id/45/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <!-- menampilkan text template lorem ipsum -->
+                            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et consectetur autem ipsum quod
+                                magni quos nostrum, molestias architecto vitae laborum earum molestiae voluptatum
+                                excepturi exercitationem neque unde quibusdam odio repellendus eius aliquam non quis ab?
+                            </p>
+                        </a>
+                    </div>
+                    <!-- membuat container kedua yang ada di dalam container row yang penjelasan class nya sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4 col-md-4">
+                        <!-- penjelasan class dan href sama seperti sebelumnya -->
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <!-- penjelasan sumber image dan class sama seperti sebelumnya -->
+                            <img src="https://picsum.photos/id/55/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <!-- menampilkan header dan text menggunakan kalimat template lorem ipsum -->
+                            <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, blanditiis!</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum architecto ducimus nisi
+                                rem, odio, enim fugit doloribus eveniet tempora esse veniam ratione voluptas. Saepe, hic
+                                aliquam cumque enim aperiam voluptas debitis blanditiis suscipit animi veniam
+                                architecto, deserunt rem, commodi vitae. Mollitia cum quae dicta veniam assumenda sint.
+                            </p>
+                        </a>
+                    </div>
+                    <!-- membuat container ketiga yang ada di dalam container row yang penjelasan class nya sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4  col-md-4">
+                        <!-- penjelasan class dan href sama seperti sebelumnya -->
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <!-- penjelasan sumber image dan class sama seperti sebelumnya -->
+                            <img src="https://picsum.photos/id/35/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <!-- menampilkan header dan text menggunakan kalimat template lorem ipsum -->
+                            <h4>Lorem, ipsum dolor.</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quas repellendus ipsa
+                                magnam eum accusamus eligendi doloremque nisi eius consequuntur voluptates ad ipsam,
+                                quidem quia odio quos.</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- penjelasan tambahan tentang kolom-kolom yang ada pada bagian berita, yang mana ketika breakpoint nya memasuki 
+                    kategori md(medium) atau lebih besar dari medium maka masing-masing gambar dari 3 container yang ada akan mengambil 4 kolom
+                dari total 12 kolom yang ada dan ketika breakpointnya kurang dari md(medium) maka gambar yang ada di dalam container ini akan di sembunyikan
+                tetapi textnya akan tetap di tampilkan-->
+            </div>
+            <!-- membuat header untuk judul bagian olahraga yang penjelasan id dan class nya sama seperti bagian berita, hanya saja terdapat perbedaan
+            pada warna bordernya (danger=merah sedangkan warning=kuning yang merupakan warna template dari bootstrap)-->
+            <h3 id="olahraga" class="border-4 border-danger border-start ps-3">Olahraga</h3>
+            <!-- membuat container untuk bagian olahraga -->
+            <div>
+                <!-- membuat container di dalam container olahraga yang di buat menjadi row -->
+                <div class="row">
+                    <!-- membuat container pertama untuk menampung image dan text -->
+                    <!-- terdapat class col-md-6 yang mana ketika breakpoint memenuhi kategori md(medium) atau kurang dari itu, maka container ini akan
+                    mengambil 6 kolom dari total 12 kolom yang ada-->
+                    <div class="px-2 col-lg-4 col-md-6 ">
+                        <!-- penjelasan class dan href sama seperti sebelumnya -->
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <!-- penjelasan sumber image dan class sama seperti sebelumnya -->
+                            <img src="https://picsum.photos/id/15/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <!-- menampilkan header dan text menggunakan kalimat template lorem ipsum -->
+                            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, deserunt.</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias aperiam, nisi
+                                libero
+                                quis animi.</p>
+                        </a>
+                    </div>
+                    <!-- membuat container kedua untuk menampung image dan text -->
+                    <!-- penjelasan terkait class sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4 col-md-6">
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <img src="https://picsum.photos/id/14/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam quidem
+                                molestiae adipisci. A in aspernatur similique ipsum beatae itaque?</p>
+                        </a>
+                    </div>
+                    <!-- membuat container ketiga untuk menampung image dan text -->
+                    <!-- penjelasan terkait class sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4  col-md-6">
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <img src="https://picsum.photos/id/133/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias aperiam, nisi
+                                libero
+                                quis animi.</p>
+                        </a>
+                    </div>
+                    <!-- membuat container keempat untuk menampung image dan text -->
+                    <!-- penjelasan terkait class sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4  col-md-6">
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <img src="https://picsum.photos/id/70/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente numquam consequatur
+                                laboriosam magnam totam placeat nam. Adipisci libero, numquam quidem ducimus possimus
+                                sed veritatis corporis.</p>
+                        </a>
+                    </div>
+                    <!-- membuat container kelima untuk menampung image dan text -->
+                    <!-- penjelasan terkait class sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4  col-md-6">
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <img src="https://picsum.photos/id/99/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, rerum quasi.
+                            </h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptatem dolor
+                                aliquam, natus iste perferendis quis eaque?</p>
+                        </a>
+                    </div>
+                    <!-- membuat container keenam untuk menampung image dan text -->
+                    <!-- penjelasan terkait class sama seperti sebelumnya -->
+                    <div class="px-2 col-lg-4  col-md-6">
+                        <a class="text-reset text-decoration-none" href="blog-detail.html">
+                            <img src="https://picsum.photos/id/94/700/400" class="img-fluid d-none d-md-block" alt="">
+                            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing.</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate facere perferendis
+                                minima doloremque totam omnis velit esse eveniet architecto unde nemo, molestias libero
+                                deserunt id ipsam repellat magni nisi, iste, vel et repudiandae pariatur laboriosam
+                                necessitatibus minus? Dolore, laborum repudiandae?</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- penjelasan tambahan tentang container yang ada pada bagian olahraga, yaitu ketika ukuran layar memasuki kategori lg(large) atau lebih besar 
+            daripada itu maka container akan di bagi menjadi 2 baris yang mana pada masing-masing gambar akan mengambil 4 kolom dari total 12 kolom yang ada sehingga
+            2 gambar pertama akan tetap berada di atas dan 2 gambar kedua akan turun kebawah dikarenakan kolom nya telah penuh di ambil oleh 2 gambar pertama-->
+
+            <!-- sedangkan ketika ukuran layar memasuki kategori md(medium (lebih kecil daripada large)) maka container akan di bagi menjadi 3 baris, yang mana pada 
+            masing-masing gambar akan mengambil 6 kolom dari total 12 kolom yang ada, sehingga 2 gambar pertama akan berada di atas, kemudian 2 gambar kedua akan turun
+            kebawahnya, dan 2 gambar terakhir akan turun kebawahnya lagi dari 2 gambar kedua, hal ini disebkan karna total 12 kolom yang ada telah diambil setangahnya 
+            atau 6 kolom dari masing-masing gambar yang ada, sehingga gambar setelahnya mau tidak mau harus turun kebawah dikarenakan kolomnya telah penuh-->
+
+            <!-- penjelasan tentang perbedaan kolom bagian berita dan bagian olahraga, yaitu pada bagian berita total dari 12 kolom akan tetap di bagi 3 baik
+            pada ukuran layar md(medium) dan lg(large) atau lebih besar daripada itu, sedangkan pada bagian olahraga ketika ukuran layar masuk kategori md(medium)
+            maka total dari 12 kolom akan di bagi 2, sehingga gambar pada bagian olahraga akan menjadi 3 baris pada ukuran layar md(md) dan 2 baris pada ukuran layar
+            lg(large) -->
+
+            <!-- penjelasan tentang text yang tetap muncul ketika ukuran layar kurang dari ukuran atau kategori md(medium), hal ini dikarenakan class d-none hanya diberikan
+            di dalam element gambar dan bukan dibagian containernya, sehingga ketika layar di kecilkan sampai kurang dari ukuran md(medium), maka gambar akan di sembunyikan
+            dan text nya akan tetap di tampilkan -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- penjelasan terkait footer di halaman ini sama seperti penjelasan di halaman index.html -->
+    <footer class="p-5 bg-dark text-warning text-center position-relative">
+        <div class="container">
+            <p class="lead">&copy; 2023 Seribu Persen</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle text-warning h1"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- penjelasan terkait penggunaan javascript di halaman ini sama seperti di halaman index.html-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
